@@ -1,7 +1,10 @@
-### Something about thrift.
+## Something about thrift.
+只是我从网上的资源的参考和一些个人总结，对于thrift学习过程中的一些小小理解，如有指正，不胜感激。
 
-#### C++的编译过程
-(注意大小写)假设我有一个main.cpp文件
+</br>
+
+### C++的编译过程
+(注意大小写)假设有一个main.cpp文件
 
 1. `-E`：**只对文件进行预处理，不进行编译和汇编。`g++ -E main.cpp`——>在dos命令行查看某文件的预处理过程，如果你想查看详细的预处理，可以重定向到一个文件中，如：`g++ -E main.cpp -o main.i`**
 
@@ -14,3 +17,13 @@
 **假设该文件依赖其他源文件（不需要加入头文件）`temp.cpp`,在对`temp.cpp`文件进行预处理->编译->汇编后，使用指令`g++ temp.o main.o -o main`**
 
 **`.\`:执行文件，输出结果。如: `.\main`，当然你可以直接`g++ main.cpp temp.cpp -o main`生成目标文件让编译器自动为你处理其他流程**
+
+</br>
+
+### **在使用thrift时，编译C++文件通常需以下三步(以main.cpp举例)：**
+
+1. **使用`g++ -c main.cpp`编译main.cpp文件**
+
+2. **使用`g++ *.o -o main -lthrift -pthread`来链接该文件，要用到thrift动态链接库和多线程编程的pthread库**
+
+3. **`.\main`执行该文件**
