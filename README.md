@@ -27,3 +27,9 @@
 2. **使用`g++ *.o -o main -lthrift -pthread`来链接该文件，要用到thrift动态链接库和多线程编程的pthread库**
 
 3. **`.\main`执行该文件**
+
+</br>
+
+### 本thrift应用假设场景的结构图：
+
+![image](https://img2022.cnblogs.com/blog/2101447/202202/2101447-20220213222508371-715652653.png)
